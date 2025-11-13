@@ -13,11 +13,11 @@
 
 <style>
     body {
-        background-color: #f0f2f5; /* Màu nền nhẹ nhàng */
+        background-color: #f0f2f5; /* Màu nền */
         display: flex;
         justify-content: center;
         align-items: center;
-        min-height: 100vh; /* Đảm bảo form ở giữa màn hình */
+        min-height: 100vh; /* form ở giữa màn hình */
         margin: 0;
     }
     .login-container {

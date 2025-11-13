@@ -9,29 +9,26 @@ public class DBSQLConnect {
 	private final String SERVERNAME = "PERSYNOMERCY"; 
     private final String DBNAME = "ltwebct4st6";
     private final String PORT = "1433";
-    private final String INSTANCE = "QUANGLAM0608"; // <--- Đưa instance name vào đây
+    private final String INSTANCE = "QUANGLAM0608";
     private final String USERID = "sa";
     private final String PASSWORD = "32632005";
 
     public Connection getConnection() throws Exception {
         String url;
         
-        // Logic mới:
-        // Nếu INSTANCE rỗng, kết nối bằng PORT (dành cho instance mặc định)
         if (INSTANCE == null || INSTANCE.trim().isEmpty()) {
             url = "jdbc:sqlserver://" + SERVERNAME + ":" + PORT 
                 + ";databaseName=" + DBNAME
-                + ";trustServerCertificate=true"; // Đã thêm fix
+                + ";trustServerCertificate=true"; 
         } 
-        // Nếu có INSTANCE, kết nối bằng instanceName (SQL Browser sẽ tự tìm port)
+
         else {
             url = "jdbc:sqlserver://" + SERVERNAME 
                 + ";instanceName=" + INSTANCE 
                 + ";databaseName=" + DBNAME
-                + ";trustServerCertificate=true"; // Đã thêm fix
+                + ";trustServerCertificate=true";
         }
 
-        // In ra URL để kiểm tra (tùy chọn)
         System.out.println("Connecting to: " + url); 
 
         Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
