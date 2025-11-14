@@ -40,8 +40,5 @@ public class Category implements Serializable{
 	public String toString() {
 		return "Category [id=" + id + ", name=" + name + ", images=" + images + "]";
 	}
-	
-	
-	
 
 }
