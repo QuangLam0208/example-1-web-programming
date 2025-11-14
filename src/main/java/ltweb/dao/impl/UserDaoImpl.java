@@ -115,4 +115,20 @@ public class UserDaoImpl implements UserDao {
 		}
 		return duplicate;
 	}
+	
+	@Override
+	public void updatePassword(String email, String newPassword) {
+		String sql = "UPDATE [User] SET [password] = ? WHERE [email] = ?";
+		
+		try (Connection conn = new DBSQLConnect().getConnection(); //
+			 PreparedStatement ps = conn.prepareStatement(sql)) {
+			
+			ps.setString(1, newPassword);
+			ps.setString(2, email);
+			ps.executeUpdate();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
 }

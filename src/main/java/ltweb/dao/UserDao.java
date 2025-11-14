@@ -13,5 +13,7 @@ public interface UserDao {
 	boolean checkExistEmail(String email);
 
 	boolean checkExistPhone(String phone);
+
+	void updatePassword(String email, String newPassword);
 	
 }

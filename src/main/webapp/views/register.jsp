@@ -99,7 +99,7 @@
 
 	<div class="login-container">
 		<form action="register" method="post"> 
-			<h2 class="text-center">Tạo tài khoản mới</h2>
+			<h2 class="text-center">Sign Up</h2>
 			
 			<c:if test="${not empty alert}">
 				<div class="alert alert-danger text-center" role="alert">
@@ -110,50 +110,50 @@
             <div class="mb-3">
 				<div class="input-group">
 					<span class="input-group-text"><i class="fa fa-id-card-o"></i></span>
-					<input type="text" placeholder="Họ và Tên" name="fullname" class="form-control" required>
+					<input type="text" placeholder="Fullname" name="fullname" class="form-control" required>
 				</div>
 			</div>
 
 			<div class="mb-3">
 				<div class="input-group">
 					<span class="input-group-text"><i class="fa fa-user"></i></span>
-					<input type="text" placeholder="Tài khoản (username)" name="username" class="form-control" required>
+					<input type="text" placeholder="Username" name="username" class="form-control" required>
 				</div>
 			</div>
             
             <div class="mb-3">
 				<div class="input-group">
 					<span class="input-group-text"><i class="fa fa-envelope"></i></span>
-					<input type="email" placeholder="Nhập Email" name="email" class="form-control" required>
+					<input type="email" placeholder="Email" name="email" class="form-control" required>
 				</div>
 			</div>
 
             <div class="mb-3">
 				<div class="input-group">
 					<span class="input-group-text"><i class="fa fa-phone"></i></span>
-					<input type="text" placeholder="Số điện thoại" name="phone" class="form-control" required>
+					<input type="text" placeholder="Phone" name="phone" class="form-control" required>
 				</div>
 			</div>
 
             <div class="mb-3">
 				<div class="input-group">
 					<span class="input-group-text"><i class="fa fa-lock"></i></span>
-					<input type="password" placeholder="Mật khẩu" name="password" class="form-control" required>
+					<input type="password" placeholder="Password" name="password" class="form-control" required>
 				</div>
 			</div>
 
             <div class="mb-3">
 				<div class="input-group">
 					<span class="input-group-text"><i class="fa fa-lock"></i></span>
-					<input type="password" placeholder="Nhập lại Mật khẩu" name="re_password" class="form-control" required>
+					<input type="password" placeholder="Confirm Password" name="re_password" class="form-control" required>
 				</div>
 			</div>
 
-            <button type="submit" name="submit" class="btn btn-primary w-100 mt-3">Tạo tài khoản</button>
+            <button type="submit" name="submit" class="btn btn-primary w-100 mt-3">Create Account</button>
 		</form>
 
         <p class="login-text">
-            Nếu bạn đã có tài khoản? <a href="login">Đăng nhập</a>
+            Already Have An Account? <a href="login">Sign In</a>
         </p>
 	</div>
 

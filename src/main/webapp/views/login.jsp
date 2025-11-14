@@ -100,7 +100,7 @@
 
 	<div class="login-container">
 		<form action="login" method="post">
-			<h2 class="text-center">Login</h2>
+			<h2 class="text-center">Sign In</h2>
 			
 			<c:if test="${not empty alert}">
 				<div class="alert alert-danger text-center" role="alert">
@@ -111,14 +111,14 @@
 			<div class="mb-3">
 				<div class="input-group">
 					<span class="input-group-text"><i class="fa fa-user"></i></span>
-					<input type="text" placeholder="Tài khoản" name="username" id="usernameInput"
+					<input type="text" placeholder="Username" name="username" id="usernameInput"
 						class="form-control" value="${param.username}"> </div>
 			</div>
 			
 			<div class="mb-3">
 				<div class="input-group">
 					<span class="input-group-text"><i class="fa fa-lock"></i></span>
-					<input type="password" placeholder="Mật khẩu" name="password" id="passwordInput"
+					<input type="password" placeholder="Password" name="password" id="passwordInput"
 						class="form-control">
 				</div>
 			</div>
@@ -127,17 +127,17 @@
 				<div class="form-check">
 					<input class="form-check-input" type="checkbox" id="rememberMe" name="rememberMe">
 					<label class="form-check-label" for="rememberMe">
-						Nhớ tôi
+						Remember me
 					</label>
 				</div>
-				<a href="#">Quên mật khẩu?</a>
+				<a href="forgot-password">Forgot password?</a>
 			</div>
 			
-			<button type="submit" name="submit" class="btn btn-primary w-100">Đăng nhập</button>
+			<button type="submit" name="submit" class="btn btn-primary w-100">Sign In</button>
 		</form>
 
         <p class="register-text">
-            Nếu bạn chưa có tài khoản trên hệ thống, thì hãy <a href="register">Đăng ký</a>
+            Don't Have An Account? <a href="register">Sign Up</a>
         </p>
 	</div>
 

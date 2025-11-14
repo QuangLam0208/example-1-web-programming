@@ -18,4 +18,6 @@ public interface UserService {
 
 	void insert(User user);
 
+	void updatePassword(String email, String newPassword);
+
 }
