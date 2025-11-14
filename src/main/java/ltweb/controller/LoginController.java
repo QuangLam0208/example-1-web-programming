@@ -12,14 +12,12 @@ import jakarta.servlet.http.HttpSession;
 import ltweb.model.User;
 import ltweb.service.UserService;
 import ltweb.service.impl.UserServiceImpl;
+import ltweb.util.Constant;
 
 @WebServlet("/login")
 public class LoginController extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
-	
-	public static final String SESSION_USERNAME = "username";
-	public static final String COOKIE_REMEMBER = "username";
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -33,7 +31,7 @@ public class LoginController extends HttpServlet {
 		Cookie[] cookies = req.getCookies();
 		if (cookies != null) {
 			for (Cookie cookie : cookies) {
-				if (cookie.getName().equals(COOKIE_REMEMBER)) { 
+				if (cookie.getName().equals(Constant.COOKIE_REMEMBER)) { 
 					String username = cookie.getValue();
 					UserService service = new UserServiceImpl();
 					User user = service.get(username); 
@@ -47,7 +45,7 @@ public class LoginController extends HttpServlet {
 				}
 			}
 		}
-		req.getRequestDispatcher("/login.jsp").forward(req, resp);
+		req.getRequestDispatcher("/views/login.jsp").forward(req, resp);
 	}
 
 
@@ -72,7 +70,7 @@ public class LoginController extends HttpServlet {
 		if(username.isEmpty() || password.isEmpty()){
 			alertMsg = "Tài khoản hoặc mật khẩu không được rỗng";
 			req.setAttribute("alert", alertMsg);
-			req.getRequestDispatcher("/login.jsp").forward(req, resp);
+			req.getRequestDispatcher("/views/login.jsp").forward(req, resp);
 			return;
 		}
 
@@ -88,12 +86,12 @@ public class LoginController extends HttpServlet {
 		} else {
 			alertMsg = "Tài khoản hoặc mật khẩu không đúng";
 			req.setAttribute("alert", alertMsg);
-			req.getRequestDispatcher("/login.jsp").forward(req, resp);
+			req.getRequestDispatcher("/views/login.jsp").forward(req, resp);
 		}
 	}
 
 	private void saveRemeberMe(HttpServletRequest req, HttpServletResponse response, String username){
-		Cookie cookie = new Cookie(COOKIE_REMEMBER, username);
+		Cookie cookie = new Cookie(Constant.COOKIE_REMEMBER, username);
 		cookie.setMaxAge(30*60);
 		cookie.setPath(req.getContextPath() + "/");
 		response.addCookie(cookie);

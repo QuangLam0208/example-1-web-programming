@@ -9,8 +9,8 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
+import ltweb.util.Constant;
 
-// 1. Đăng ký Servlet này với đường dẫn "/logout"
 @WebServlet(urlPatterns = "/logout")
 public class LogoutController extends HttpServlet {
 
@@ -28,10 +28,8 @@ public class LogoutController extends HttpServlet {
         Cookie[] cookies = req.getCookies();
         if (cookies != null) {
             for (Cookie cookie : cookies) {
-                // Phải gọi hằng số từ LoginController
-                if (cookie.getName().equals(LoginController.COOKIE_REMEMBER)) {
+                if (cookie.getName().equals(Constant.COOKIE_REMEMBER)) {
                     cookie.setMaxAge(0); // Set tuổi = 0 để xóa cookie
-                    // Path phải khớp với path lúc bạn tạo cookie
                     cookie.setPath(req.getContextPath() + "/"); 
                     resp.addCookie(cookie);
                     break;

@@ -2,8 +2,6 @@ package ltweb.config;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 
 public class DBSQLConnect {
 	private final String SERVERNAME = "PERSYNOMERCY"; 
@@ -36,25 +34,11 @@ public class DBSQLConnect {
     }
 	
 	public static void main(String[] args) {
-		String sqlInsert = "INSERT INTO GiaoVien VALUES(?, ?, ?)";
-		String selectAll = "SELECT * FROM GiaoVien";
-		try {
-			Connection conn = new DBSQLConnect().getConnection();
+		try (@SuppressWarnings("unused")
+		Connection conn = new DBSQLConnect().getConnection();) {
 			
-			PreparedStatement stmt = conn.prepareStatement(sqlInsert);
-			stmt.setInt(1, 1);
-			stmt.setString(2, "Trung");
-			stmt.setString(3, "HCM");
-			stmt.execute();
-			stmt = conn.prepareStatement(selectAll);
-			// get data from table ‘GiaoVien'
-			ResultSet rs = stmt.executeQuery();
-			// show data
-			while (rs.next()) {
-				System.out.println(rs.getInt(1) + " " + rs.getString(2) + " " + rs.getString(3));
-			}
-			stmt.close();
-			conn.close(); // close connection
+			System.out.println("Connect thanh cong");
+
 		} catch (Exception ex) {
 			ex.printStackTrace();
 		}

@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -136,7 +137,7 @@
 		</form>
 
         <p class="register-text">
-            Nếu bạn chưa có tài khoản trên hệ thống, thì hãy <a href="#">Đăng ký</a>
+            Nếu bạn chưa có tài khoản trên hệ thống, thì hãy <a href="register">Đăng ký</a>
         </p>
 	</div>
 
