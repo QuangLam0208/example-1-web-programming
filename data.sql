@@ -46,6 +46,38 @@ PRINT 'Da tao bang User (voi cau truc moi bao gom fullname)';
 GO
 
 
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[Category]') AND type in (N'U'))
+BEGIN
+    CREATE TABLE [dbo].[Category] (
+        [id] INT IDENTITY(1,1) PRIMARY KEY,
+        [name] NVARCHAR(255) NOT NULL,
+        [images] NVARCHAR(255) NULL
+    );
+    PRINT 'Da tao bang Category (voi ID tu tang)';
+END
+GO
+
+
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[Product]') AND type in (N'U'))
+BEGIN
+    CREATE TABLE [dbo].[Product] (
+        [id] INT IDENTITY(1,1) PRIMARY KEY,
+        [name] NVARCHAR(255) NOT NULL,
+        [image] NVARCHAR(255) NULL,
+        [price] DECIMAL(18, 2) NOT NULL,
+        [description] NVARCHAR(MAX) NULL,
+        
+        -- Khóa ngoại liên kết với Bảng Category
+        [cate_id] INT,
+        CONSTRAINT [FK_Product_Category] FOREIGN KEY([cate_id])
+        REFERENCES [dbo].[Category] ([id])
+        ON DELETE SET NULL -- (Nếu xóa category, sản phẩm không bị xóa theo)
+    );
+    PRINT 'Da tao bang Product';
+END
+GO
+
+
 INSERT INTO [dbo].[GiaoVien] ([name], [address])
 VALUES
     (N'Nguyễn Hữu Trung', N'TP. Hồ Chí Minh'),
