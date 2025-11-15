@@ -12,18 +12,18 @@
 <body>
 
 <div class="container mt-5">
-	<h2>Quản lý Danh mục</h2>
+	<h2>Category Management</h2>
 	
 	<!-- Nút Thêm Mới -->
-	<a href="${pageContext.request.contextPath}/admin/category/add" class="btn btn-primary mb-3">Thêm Danh Mục Mới</a>
+	<a href="${pageContext.request.contextPath}/admin/category/add" class="btn btn-primary mb-3">Add New Category</a>
 	
 	<table class="table table-bordered table-striped">
 		<thead class="table-dark">
 			<tr>
-				<th>STT</th>
-				<th>Hình ảnh</th>
-				<th>Tên danh mục</th>
-				<th>Hành động</th>
+				<th>No.</th>
+				<th>Image</th>
+				<th>Category name</th>
+				<th>Action</th>
 			</tr>
 		</thead>
 		<tbody>

@@ -22,7 +22,7 @@
 	<div class="container">
 		<h2>Have a good day bro, ${sessionScope.account.username}!</h2>
 			
-		<a href="${pageContext.request.contextPath}/logout" class="btn btn-danger mt-3">Đăng xuất</a>
+		<a href="${pageContext.request.contextPath}/logout" class="btn btn-danger mt-3">Log Out</a>
 	</div>
 
 </body>

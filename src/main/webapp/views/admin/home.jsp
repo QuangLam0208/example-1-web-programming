@@ -23,17 +23,17 @@
 				<h2>Admin Dashboard</h2>
 			</div>
 			<div class="card-body">
-				<h5 class="card-title">Chào mừng Admin ${sessionScope.account.fullname}!</h5>
-				<p class="card-text">Đây là trang quản trị, bạn có thể thực hiện các chức năng dưới đây.</p>
+				<h5 class="card-title">Welcome Admin ${sessionScope.account.fullname}!</h5>
+				<p class="card-text">This is the admin page, you can perform the functions below.</p>
 				
 				<a href="${pageContext.request.contextPath}/admin/category/list" class="btn btn-primary">
-					Quản lý Danh mục
+					Category Management
 				</a>
 				
 				<!-- (nút "Quản lý Sản phẩm" ở đây) -->
 				
 				<!-- Nút Đăng xuất -->
-				<a href="${pageContext.request.contextPath}/logout" class="btn btn-danger" style="float: right;">Đăng xuất</a>
+				<a href="${pageContext.request.contextPath}/logout" class="btn btn-danger" style="float: right;">Log Out</a>
 			</div>
 		</div>
 	</div>

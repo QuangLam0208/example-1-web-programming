@@ -20,10 +20,10 @@
 </head>
 <body>
 	<div class="container">
-		<h2>Chào mừng Manager ${sessionScope.account.username}!</h2>
-		<p>Đây là trang quản lý.</p>
+		<h2>Welcome Manager ${sessionScope.account.username}!</h2>
+		<p>This is the manager page.</p>
 			
-		<a href="${pageContext.request.contextPath}/logout" class="btn btn-danger mt-3">Đăng xuất</a>
+		<a href="${pageContext.request.contextPath}/logout" class="btn btn-danger mt-3">Log Out</a>
 	</div>
 
 </body>
