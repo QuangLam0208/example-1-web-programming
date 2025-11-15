@@ -8,23 +8,34 @@
     %>
 </c:if>
 
-
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Trang chủ</title>
-
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
+<title>Admin Dashboard</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body>
-	
+<body class="p-5">
+
 	<div class="container">
-		<h2>Chào mừng Admin ${sessionScope.account.username}!</h2>
-		<p>Đây là trang quản trị.</p>
-			
-		<a href="${pageContext.request.contextPath}/logout" class="btn btn-danger mt-3">Đăng xuất</a>
+		<div class="card">
+			<div class="card-header">
+				<h2>Admin Dashboard</h2>
+			</div>
+			<div class="card-body">
+				<h5 class="card-title">Chào mừng Admin ${sessionScope.account.fullname}!</h5>
+				<p class="card-text">Đây là trang quản trị, bạn có thể thực hiện các chức năng dưới đây.</p>
+				
+				<a href="${pageContext.request.contextPath}/admin/category/list" class="btn btn-primary">
+					Quản lý Danh mục
+				</a>
+				
+				<!-- (nút "Quản lý Sản phẩm" ở đây) -->
+				
+				<!-- Nút Đăng xuất -->
+				<a href="${pageContext.request.contextPath}/logout" class="btn btn-danger" style="float: right;">Đăng xuất</a>
+			</div>
+		</div>
 	</div>
 
 </body>
