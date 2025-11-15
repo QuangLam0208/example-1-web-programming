@@ -11,7 +11,7 @@
 <body>
 
 <div class="container mt-5" style="max-width: 600px;">
-	<h2>Chỉnh sửa Danh mục</h2>
+	<h2>Edit Category</h2>
 	
 	<c:url value="/admin/category/edit" var="edit"></c:url>
 	<form role="form" action="${edit}" method="post" enctype="multipart/form-data">
@@ -20,23 +20,23 @@
 		<input name="id" value="${category.cate_id}" type="hidden">
 
 		<div class="mb-3">
-			<label for="name" class="form-label">Tên danh mục:</label> 
+			<label for="name" class="form-label">Category name:</label> 
 			<input type="text" class="form-control" value="${category.cate_name}" name="name" id="name" required />
 		</div>
 
 		<div class="mb-3">
-			<label class="form-label">Ảnh hiện tại:</label><br>
+			<label class="form-label">Current image:</label><br>
 			<c:url value="/image?fname=${category.icons.replace('\\\\','/')}" var="imgUrl"></c:url>
 			<img class="img-responsive" width="150px" src="${imgUrl}" alt="Ảnh danh mục">
 		</div>
 
 		<div class="mb-3">
-			<label for="icon" class="form-label">Tải ảnh mới (để trống nếu không muốn đổi):</label> 
+			<label for="icon" class="form-label">Upload new image (leave blank if you don't want to change):</label> 
 			<input type="file" name="icon" id="icon" class="form-control" />
 		</div>
 
-		<button type="submit" class="btn btn-success">Cập nhật</button>
-		<a href="${pageContext.request.contextPath}/admin/category/list" class="btn btn-secondary">Hủy</a>
+		<button type="submit" class="btn btn-success">Update</button>
+		<a href="${pageContext.request.contextPath}/admin/category/list" class="btn btn-secondary">Cancel</a>
 	</form>
 </div>
 

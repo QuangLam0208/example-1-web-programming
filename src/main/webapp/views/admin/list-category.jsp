@@ -37,11 +37,12 @@
 					<td><img height="100" src="${imgUrl}" /></td>
 					<td>${cate.cate_name}</td>
 					<td>
-						<a href="<c:url value='/admin/category/edit?id=${cate.cate_id}'/>" class="btn btn-warning btn-sm">Sửa</a>
-						<a href="<c:url value='/admin/category/delete?id=${cate.cate_id}'/>" class="btn btn-danger btn-sm" onclick="return confirm('Bạn có chắc muốn xóa?')">Xóa</a>
+						<a href="<c:url value='/admin/category/edit?id=${cate.cate_id}'/>" class="btn btn-warning btn-sm">Edit</a>
+						<a href="<c:url value='/admin/category/delete?id=${cate.cate_id}'/>" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to delete?')">Delete</a>
 					</td>
 				</tr>
 			</c:forEach>
+			
 		</tbody>
 	</table>
 </div>
