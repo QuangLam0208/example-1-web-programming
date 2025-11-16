@@ -14,7 +14,7 @@ public class CategoryDaoImpl implements CategoryDao {
 
 	@Override
 	public void insert(Category category) {
-		String sql = "INSERT TO [Category]([name], [images]) VALUES (?,?)";
+		String sql = "INSERT INTO [Category]([name], [images]) VALUES (?,?)";
 		try (Connection conn = new DBSQLConnect().getConnection();
 				PreparedStatement ps = conn.prepareStatement(sql)) {
 

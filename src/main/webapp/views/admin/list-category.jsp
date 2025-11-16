@@ -32,13 +32,13 @@
 				<tr>
 					<td>${STT.index + 1}</td>
 					
-					<c:url value="/image?fname=${cate.icons.replace('\\\\','/')}" var="imgUrl"></c:url>
+					<c:url value="/image?fname=${cate.images.replace('\\\\','/')}" var="imgUrl"></c:url>
 					
 					<td><img height="100" src="${imgUrl}" /></td>
-					<td>${cate.cate_name}</td>
+					<td>${cate.name}</td>
 					<td>
-						<a href="<c:url value='/admin/category/edit?id=${cate.cate_id}'/>" class="btn btn-warning btn-sm">Edit</a>
-						<a href="<c:url value='/admin/category/delete?id=${cate.cate_id}'/>" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to delete?')">Delete</a>
+						<a href="<c:url value='/admin/category/edit?id=${cate.id}'/>" class="btn btn-warning btn-sm">Edit</a>
+						<a href="<c:url value='/admin/category/delete?id=${cate.id}'/>" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to delete?')">Delete</a>
 					</td>
 				</tr>
 			</c:forEach>

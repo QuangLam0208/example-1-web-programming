@@ -17,16 +17,16 @@
 	<form role="form" action="${edit}" method="post" enctype="multipart/form-data">
 		
 		<!-- Gửi ID của category đi -->
-		<input name="id" value="${category.cate_id}" type="hidden">
+		<input name="id" value="${category.id}" type="hidden">
 
 		<div class="mb-3">
 			<label for="name" class="form-label">Category name:</label> 
-			<input type="text" class="form-control" value="${category.cate_name}" name="name" id="name" required />
+			<input type="text" class="form-control" value="${category.name}" name="name" id="name" required />
 		</div>
 
 		<div class="mb-3">
 			<label class="form-label">Current image:</label><br>
-			<c:url value="/image?fname=${category.icons.replace('\\\\','/')}" var="imgUrl"></c:url>
+			<c:url value="/image?fname=${category.images.replace('\\\\','/')}" var="imgUrl"></c:url>
 			<img class="img-responsive" width="150px" src="${imgUrl}" alt="Ảnh danh mục">
 		</div>
 
